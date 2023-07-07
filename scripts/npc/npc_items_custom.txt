@@ -1,0 +1,641 @@
+"DOTAAbilities"
+{
+
+	//====================================================================================================================
+    //Dummy Item used by util.lua, function swap_to_item()
+    //====================================================================================================================
+    "item_dummy_datadriven"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"                            "2001"
+		"BaseClass"                     "item_datadriven"
+		"ItemBaseLevel"                 "1"
+	}
+
+    //====================================================================================================================
+    //Cancel Building
+    //====================================================================================================================
+    "item_building_cancel"
+    {
+        "BaseClass"             		"item_datadriven"
+        "AbilityTextureName"			"item_building_cancel"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
+        "AbilityCastPoint"				"0"
+
+        "ItemDroppable" 				"0"
+        "ItemPurchasable" 				"0"
+        "ItemSellable"					"0"
+        
+        "OnSpellStart"
+        {
+            "RunScript"
+            {
+                "ScriptFile"	"builder.lua"
+                "Function"		"CancelBuilding"
+            }
+        }
+    }
+
+	//=================================================================================================================
+	// Building Self-Destruct
+	//=================================================================================================================
+	"item_building_selfdestruct_lua"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_building_selfdestruct"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemDroppable" 				"0"
+        "ItemPurchasable" 				"0"
+        "ItemSellable"					"0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"channel_duration"			"8"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"refund_pct"				"30"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"min_dmg"					"5"
+			}
+		}
+
+		"OnSpellStart"
+        {
+            "RunScript"
+            {
+                "ScriptFile"	"lua_abilities/item_building_selfdestruct_lua"
+                "Function"		"OnSelfdestructCast"
+            }
+        }
+	}
+
+	//=================================================================================================================
+	// Building Self-Destruct Cancel
+	//=================================================================================================================
+	"item_building_selfdestruct_cancel_lua"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_building_selfdestruct_cancel"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemDroppable" 				"0"
+        "ItemPurchasable" 				"0"
+        "ItemSellable"					"0"
+
+		"OnSpellStart"
+        {
+            "RunScript"
+            {
+                "ScriptFile"	"lua_abilities/item_building_selfdestruct_lua"
+                "Function"		"OnSelfdestructCancel"
+            }
+        }
+	}
+
+	//=================================================================================================================
+	// Unit Upgrade Generic
+	//=================================================================================================================
+	"item_unit_upgrade_lua"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_lua"
+		"AbilityTextureName"			"item_unit_upgrade"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"ScriptFile"					"lua_abilities/items/item_unit_upgrade_lua"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemDroppable" 				"0"
+        "ItemPurchasable" 				"0"
+        "ItemSellable"					"0"
+
+		// Ability Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"8"
+		"AbilityGoldCost"               "100"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"cast_time"					"8"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Upgrade: sellsword to zealot
+	//=================================================================================================================
+	"item_upgrade_sellsword_zealot"
+	{
+       "BaseClass"                    "item_datadriven"
+		"AbilityTextureName"			"item_zealot"
+	   	"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_UNRESTRICTED | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemDroppable" 				"0"
+        "ItemPurchasable" 				"0"
+        "ItemSellable"					"0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		"AbilityGoldCost"               "650"
+
+		"OnSpellStart"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"        "lua_abilities/hire_units.lua"
+	            "Function"          "UpgradeUnitFromBasic"
+	        }
+	    }
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"gold_cost"					"650"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"lumber_cost"				"600"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Upgrade: sellsword to warrior
+	//=================================================================================================================
+	"item_upgrade_sellsword_warrior"
+	{
+       "BaseClass"                    "item_datadriven"
+		"AbilityTextureName"			"item_warrior"
+	   	"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_UNRESTRICTED | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemDroppable" 				"0"
+        "ItemPurchasable" 				"0"
+        "ItemSellable"					"0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		"AbilityGoldCost"               "650"
+
+		"OnSpellStart"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"        "lua_abilities/hire_units.lua"
+	            "Function"          "UpgradeUnitFromBasic"
+	        }
+	    }
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"gold_cost"					"650"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"lumber_cost"				"600"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Upgrade: bowman to hunter
+	//=================================================================================================================
+	"item_upgrade_bowman_hunter"
+	{
+       "BaseClass"                    "item_datadriven"
+		"AbilityTextureName"			"item_huntsman"
+	   	"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_UNRESTRICTED | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemDroppable" 				"0"
+        "ItemPurchasable" 				"0"
+        "ItemSellable"					"0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		"AbilityGoldCost"               "720"
+
+		"OnSpellStart"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"        "lua_abilities/hire_units.lua"
+	            "Function"          "UpgradeUnitFromBasic"
+	        }
+	    }
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"gold_cost"					"720"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"lumber_cost"				"680"
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	// Upgrade: bowman to rifleman
+	//=================================================================================================================
+	"item_upgrade_bowman_rifleman"
+	{
+       "BaseClass"                    "item_datadriven"
+		"AbilityTextureName"			"item_rifleman"
+	   	"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_UNRESTRICTED | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemDroppable" 				"0"
+        "ItemPurchasable" 				"0"
+        "ItemSellable"					"0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		"AbilityGoldCost"               "720"
+
+		"OnSpellStart"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"        "lua_abilities/hire_units.lua"
+	            "Function"          "UpgradeUnitFromBasic"
+	        }
+	    }
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"gold_cost"					"720"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"lumber_cost"				"680"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Item Torch
+	//=================================================================================================================
+	"item_torch_inactive"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_torch_inactive"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"FightRecapLevel"				"1"
+
+		// Ability Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"    "1000"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"200"
+		"ItemDroppable" 				"1"
+        "ItemPurchasable" 				"1"
+        "ItemSellable"					"1"
+		"ItemKillable"					"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"night_vision_extra_range"			"500"
+			}
+		}
+
+		"OnSpellStart"
+        {
+            "RunScript"
+            {
+                "ScriptFile"	"lua_abilities/items/item_torch_lua"
+                "Function"		"OnToggle"
+            }
+        }
+	}
+
+	//=================================================================================================================
+	// Item Torch
+	//=================================================================================================================
+	"item_torch_active"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_torch_active"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"FightRecapLevel"				"1"
+
+		// Ability Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"    "1000"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"200"
+		"ItemDroppable" 				"1"
+        "ItemPurchasable" 				"1"
+        "ItemSellable"					"1"
+		"ItemKillable"					"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"night_vision_extra_range"			"500"
+			}
+		}
+
+		"OnSpellStart"
+        {
+            "RunScript"
+            {
+                "ScriptFile"	"lua_abilities/items/item_torch_lua"
+                "Function"		"OnToggle"
+            }
+        }
+
+		"OnUnequip"
+		{		
+			"RunScript"
+			{
+				"ScriptFile"					"lua_abilities/items/item_torch_lua"
+				"Function"						"OnUnequip"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Item Sheep Basket
+	//=================================================================================================================
+	"item_sheep_basket"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		//"AbilityTextureName"			"item_torch_active"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"Model"							"models/props_gameplay/sheep01.vmdl"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemDroppable" 				"0"
+        "ItemPurchasable" 				"0"
+		"ItemStackable"					"0"
+        "ItemSellable"					"0"
+		"ItemKillable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"ItemCastOnPickup"				"1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"sheep_limit_increase"			"1"
+			}
+		}
+		"OnSpellStart"
+        {
+			"SpendCharge" 
+	        {}
+            "RunScript"
+            {
+                "ScriptFile"	"lua_abilities/items/item_sheep_basket_lua"
+                "Function"		"OnPickup"
+            }
+        }
+	}
+
+    //=================================================================================================================
+	// Holdout Tombstone
+	//=================================================================================================================
+	"item_tombstone"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityName"					"item_tombstone"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"Model"							"models/props_gameplay/tombstoneb01.vmdl"
+		"PingOverrideText"				"DOTA_Chat_Tombstone_Pinged"
+		"precache"
+		{
+			"particle_folder" "particles/units/heroes/hero_morphling"
+		}
+
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		"AbilityChannelTime"			"6.5"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"99999"
+		"ItemPurchasable"				"0"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"ItemCastOnPickup"				"1"
+		"ItemKillable"					"0"
+	}
+
+	//=================================================================================================================	
+	// Item Key
+	//=================================================================================================================
+	"item_keystone_key"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_keystone_key"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"Model"							"models/props_gameplay/aghanim_scepter.vmdl"
+		"AbilityUnitTargetTeam"   		"DOTA_UNIT_TARGET_TEAM_BOTH"
+	    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_BUILDING"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemDroppable" 				"0"
+        "ItemPurchasable" 				"0"
+		"ItemStackable"					"0"
+        "ItemSellable"					"0"
+		"ItemKillable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"200"
+		"AbilityChannelTime"			"9999.0"
+		"AbilityCastAnimation"			"ACT_DOTA_GENERIC_CHANNEL_1"
+		"AbilityCooldown"				"1"
+
+		"OnAbilityPhaseStart"
+        {
+            "RunScript"
+            {
+                "ScriptFile"	"lua_abilities/items/item_keystone_key_lua"
+                "Function"		"OnAbilityPhaseStart"
+            }
+        }
+		"OnSpellStart"
+        {
+            "RunScript"
+            {
+                "ScriptFile"	"lua_abilities/items/item_keystone_key_lua"
+                "Function"		"OnSpellStart"
+            }
+        }
+		"OnChannelInterrupted"
+        {
+            "RunScript"
+            {
+                "ScriptFile"	"lua_abilities/items/item_keystone_key_lua"
+                "Function"		"OnChannelEnd"
+            }
+        }
+	}
+
+	//=================================================================================================================	
+	// Item Truth Stone
+	//=================================================================================================================
+	"item_truth_lens"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_aether_lens"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		//"Model"							"models/props_gameplay/aghanim_scepter.vmdl"
+		"AbilityUnitTargetTeam"   		"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemDroppable" 				"0"
+        "ItemPurchasable" 				"1"
+		"ItemStackable"					"0"
+        "ItemSellable"					"0"
+		"ItemKillable"					"0"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.4"
+
+		"ItemCost"						"550"
+		"ItemStockMax" 					"1"
+		"ItemStockTime" 				"9999"
+		"ItemStockInitial" 				"1"
+		
+		"OnSpellStart"
+        {
+			"SpendCharge" 
+	        {}
+            "RunScript"
+            {
+                "ScriptFile"	"lua_abilities/items/item_truth_lens_lua"
+                "Function"		"OnSpellStart"
+            }
+        }
+	}
+
+
+}

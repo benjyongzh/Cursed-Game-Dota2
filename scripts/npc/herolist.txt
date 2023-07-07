@@ -1,0 +1,9 @@
+//
+// <key>    <value>
+// hero     currently on/off, will be number of instances (-1 is infinite)
+
+"CustomHeroList"
+{
+    "npc_dota_hero_omniknight"  "-1"
+    "npc_dota_hero_axe"  "-1"//for testing
+}

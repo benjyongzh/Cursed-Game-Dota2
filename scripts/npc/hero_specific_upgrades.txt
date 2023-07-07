@@ -1,0 +1,836 @@
+"DOTAAbilities"
+{
+	"Version"		"1"
+
+	//=================================================================================================================
+	// Increase Shield Taunt Cast Range 150
+	//=================================================================================================================
+	"defender_upgrade_1"
+	{
+       "BaseClass"                    "ability_datadriven"
+		//"AbilityTextureName"			"rattletrap_power_cogs"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	   	"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        // Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range_increase"				"150"
+			}
+		}
+	}
+
+    //=================================================================================================================
+	// Increase Energy Shield HP 100
+	//=================================================================================================================
+	"defender_upgrade_2"
+	{
+       "BaseClass"                    "ability_datadriven"
+		//"AbilityTextureName"			"rattletrap_power_cogs"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	   	"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+		"OnUpgrade"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"        "lua_abilities/upgrades/hero_upgrades_lua.lua"
+	            "Function"          "UpgradeValue"
+	        }
+	    }
+
+        // Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"shield_hp_increase"				"100"
+			}
+		}
+	}
+
+    //=================================================================================================================
+	// Decrease Energy Shield Regen CD 1.5
+	//=================================================================================================================
+	"defender_upgrade_3"
+	{
+       "BaseClass"                    "ability_datadriven"
+		//"AbilityTextureName"			"rattletrap_power_cogs"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	   	"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+		"OnUpgrade"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"        "lua_abilities/upgrades/hero_upgrades_lua.lua"
+	            "Function"          "UpgradeValue"
+	        }
+	    }
+
+        // Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cd_decrease"				"1.5"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// reduce trap cast point 0.5
+	//=================================================================================================================
+	"scout_upgrade_1"
+	{
+       "BaseClass"                    "ability_datadriven"
+		//"AbilityTextureName"			"rattletrap_power_cogs"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	   	"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        // Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_point_decrease"				"0.5"
+			}
+		}
+	}
+
+    //=================================================================================================================
+	// reduce ensnare cd -3
+	//=================================================================================================================
+	"scout_upgrade_2"
+	{
+       "BaseClass"                    "ability_datadriven"
+		//"AbilityTextureName"			"rattletrap_power_cogs"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	   	"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        // Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cd_decrease"				"3"
+			}
+		}
+	}
+
+    //=================================================================================================================
+	// +100 movespeed
+	//=================================================================================================================
+	"scout_upgrade_3"
+	{
+       "BaseClass"                    "ability_datadriven"
+		//"AbilityTextureName"			"rattletrap_power_cogs"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	   	"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+		"OnUpgrade"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"        "lua_abilities/upgrades/hero_upgrades_lua.lua"
+	            "Function"          "UpgradeValue"
+	        }
+	    }
+
+        // Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"ms_bonus"				"100"
+			}
+		}
+	}
+
+    //================================================================================================================= 
+	// reduce rage self damage -1
+	//=================================================================================================================
+	"barbarian_upgrade_1"
+	{
+       "BaseClass"                    "ability_datadriven"
+		//"AbilityTextureName"			"rattletrap_power_cogs"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	   	"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+		"OnUpgrade"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"        "lua_abilities/upgrades/hero_upgrades_lua.lua"
+	            "Function"          "UpgradeValue"
+	        }
+	    }
+
+        // Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg_decrease"				"1"
+			}
+		}
+	}
+
+    //=================================================================================================================
+	// charge cast point reduce 0.6
+	//=================================================================================================================
+	"barbarian_upgrade_2"
+	{
+       "BaseClass"                    "ability_datadriven"
+		//"AbilityTextureName"			"rattletrap_power_cogs"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	   	"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        // Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_point_decrease"				"0.6"
+			}
+		}
+	}
+
+    //=================================================================================================================
+	// reduce axe throw mp cost 20
+	//=================================================================================================================
+	"barbarian_upgrade_3"
+	{
+       "BaseClass"                    "ability_datadriven"
+		//"AbilityTextureName"			"rattletrap_power_cogs"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	   	"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        // Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mp_cost_decrease"				"20"
+			}
+		}
+	}
+
+    //================================================================================================================= 
+	// knockback dmg 50
+	//=================================================================================================================
+	"ranger_upgrade_1"
+	{
+       "BaseClass"                    "ability_datadriven"
+		//"AbilityTextureName"			"rattletrap_power_cogs"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	   	"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        // Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg"					"50"
+			}
+		}
+	}
+
+    //=================================================================================================================
+	// swap_arrow_teleport enable
+	//=================================================================================================================
+	"ranger_upgrade_2"
+	{
+       "BaseClass"                    "ability_datadriven"
+		//"AbilityTextureName"			"rattletrap_power_cogs"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	   	"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+		"OnUpgrade"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"        "lua_abilities/upgrades/hero_upgrades_lua.lua"
+	            "Function"          "UnlockAbility"
+	        }
+	    }
+	}
+
+    //=================================================================================================================
+	// powershot destroys trees
+	//=================================================================================================================
+	"ranger_upgrade_3"
+	{
+       "BaseClass"                    "ability_datadriven"
+		//"AbilityTextureName"			"rattletrap_power_cogs"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	   	"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        // Special
+		//-------------------------------------------------------------------------------------------------------------
+	}
+
+    //=================================================================================================================
+	// invisible wall enable
+	//=================================================================================================================
+	"illusionist_upgrade_1"
+	{
+       "BaseClass"                    "ability_datadriven"
+		//"AbilityTextureName"			"rattletrap_power_cogs"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	   	"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+		"OnUpgrade"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"        "lua_abilities/upgrades/hero_upgrades_lua.lua"
+	            "Function"          "UnlockAbility"
+	        }
+	    }
+	}
+
+    //================================================================================================================= 
+	// reduce glimmer fade time 1 and cd 6
+	//=================================================================================================================
+	"illusionist_upgrade_2"
+	{
+       "BaseClass"                    "ability_datadriven"
+		//"AbilityTextureName"			"rattletrap_power_cogs"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	   	"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        // Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"fade_time_decrease"				"1"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cd_decrease"				"6"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// dopploe flicker + 1 illusion
+	//=================================================================================================================
+	"illusionist_upgrade_3"
+	{
+       "BaseClass"                    "ability_datadriven"
+		//"AbilityTextureName"			"rattletrap_power_cogs"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	   	"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	}
+
+	//=================================================================================================================
+	// reduce heal dmg 10
+	//=================================================================================================================
+	"guardian_upgrade_1"
+	{
+       "BaseClass"                    "ability_datadriven"
+		//"AbilityTextureName"			"rattletrap_power_cogs"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	   	"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        // Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg_decrease"				"10"
+			}
+		}
+	}
+
+    //=================================================================================================================
+	// resurrect enable
+	//=================================================================================================================
+	"guardian_upgrade_2"
+	{
+       "BaseClass"                    "ability_datadriven"
+		//"AbilityTextureName"			"rattletrap_power_cogs"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	   	"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+		"OnUpgrade"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"        "lua_abilities/upgrades/hero_upgrades_lua.lua"
+	            "Function"          "UnlockAbility"
+	        }
+	    }
+	}
+
+    //=================================================================================================================
+	// patience aoe +250
+	//=================================================================================================================
+	"guardian_upgrade_3"
+	{
+       "BaseClass"                    "ability_datadriven"
+		//"AbilityTextureName"			"rattletrap_power_cogs"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	   	"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+		"OnUpgrade"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"        "lua_abilities/upgrades/hero_upgrades_lua.lua"
+	            "Function"          "UpgradeValue"
+	        }
+	    }
+
+        // Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aoe_bonus"				"250"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// flare duration +3
+	//=================================================================================================================
+	"boomer_upgrade_1"
+	{
+       "BaseClass"                    "ability_datadriven"
+		//"AbilityTextureName"			"rattletrap_power_cogs"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	   	"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        // Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration_increase"				"3"
+			}
+		}
+	}
+
+    //=================================================================================================================
+	// reduce boomershot cd -8
+	//=================================================================================================================
+	"boomer_upgrade_2"
+	{
+       "BaseClass"                    "ability_datadriven"
+		//"AbilityTextureName"			"rattletrap_power_cogs"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	   	"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        // Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cd_decrease"				"8"
+			}
+		}
+	}
+
+    //=================================================================================================================
+	// sugar rush duration = cd when self-cast
+	//=================================================================================================================
+	"boomer_upgrade_3"
+	{
+       "BaseClass"                    "ability_datadriven"
+		//"AbilityTextureName"			"rattletrap_power_cogs"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	   	"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	}
+
+    //=================================================================================================================
+	// flash step max range +100
+	//=================================================================================================================
+	"samurai_upgrade_1"
+	{
+       "BaseClass"                    "ability_datadriven"
+		//"AbilityTextureName"			"rattletrap_power_cogs"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	   	"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        // Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"max_range_increase"				"100"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// flash step reduce cd -2
+	//=================================================================================================================
+	"samurai_upgrade_2"
+	{
+       "BaseClass"                    "ability_datadriven"
+		//"AbilityTextureName"			"rattletrap_power_cogs"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	   	"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        // Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cd_decrease"				"2"
+			}
+		}
+	}
+
+    //=================================================================================================================
+	// flash step auto-cast counter
+	//=================================================================================================================
+	"samurai_upgrade_3"
+	{
+       "BaseClass"                    "ability_datadriven"
+		//"AbilityTextureName"			"rattletrap_power_cogs"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	   	"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	}
+
+    //=================================================================================================================
+	// tree vision increase duration +15
+	//=================================================================================================================
+	"druid_upgrade_1"
+	{
+       "BaseClass"                    "ability_datadriven"
+		//"AbilityTextureName"			"rattletrap_power_cogs"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	   	"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        // Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration_increase"				"15"
+			}
+		}
+	}
+
+    //=================================================================================================================
+	// remove casting mana cost of shapeshifts
+	//=================================================================================================================
+	"druid_upgrade_2"
+	{
+       "BaseClass"                    "ability_datadriven"
+		//"AbilityTextureName"			"rattletrap_power_cogs"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	   	"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+
+		"OnUpgrade"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"        "lua_abilities/upgrades/hero_upgrades_lua.lua"
+	            "Function"          "UpgradeValue"
+	        }
+	    }
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	}
+
+    //=================================================================================================================
+	// shapeshift mana cost percentage reduction 40%
+	//=================================================================================================================
+	"druid_upgrade_3"
+	{
+       "BaseClass"                    "ability_datadriven"
+		//"AbilityTextureName"			"rattletrap_power_cogs"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	   	"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+		"OnUpgrade"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"        "lua_abilities/upgrades/hero_upgrades_lua.lua"
+	            "Function"          "UpgradeValue"
+	        }
+	    }
+
+        // Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mp_cost_pct"				"0.4"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bird_original"				"5.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bear_original"				"8.0"
+			}
+		}
+	}
+
+    //=================================================================================================================
+	// flashbang radius increase +150
+	//=================================================================================================================
+	"assassin_upgrade_1"
+	{
+       "BaseClass"                    "ability_datadriven"
+		//"AbilityTextureName"			"rattletrap_power_cogs"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	   	"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+		"OnUpgrade"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"        "lua_abilities/upgrades/hero_upgrades_lua.lua"
+	            "Function"          "UpgradeValue"
+	        }
+	    }
+
+        // Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"radius_increase"				"150"
+			}
+		}
+	}
+
+    //=================================================================================================================
+	// backstab base damage increase +35
+	//=================================================================================================================
+	"assassin_upgrade_2"
+	{
+       "BaseClass"                    "ability_datadriven"
+		//"AbilityTextureName"			"rattletrap_power_cogs"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	   	"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+		"OnUpgrade"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"        "lua_abilities/upgrades/hero_upgrades_lua.lua"
+	            "Function"          "UpgradeValue"
+	        }
+	    }
+		
+        // Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg_increase"				"35"
+			}
+		}
+	}
+
+    //=================================================================================================================
+	// invis cd come out reduce 3.0
+	//=================================================================================================================
+	"assassin_upgrade_3"
+	{
+       "BaseClass"                    "ability_datadriven"
+		//"AbilityTextureName"			"rattletrap_power_cogs"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	   	"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        // Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cd_decrease"				"3.0"
+			}
+		}
+	}
+
+}

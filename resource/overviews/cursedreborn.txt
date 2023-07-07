@@ -1,0 +1,8 @@
+cursedreborn
+{
+	material materials/overviews/cursedreborn.vmat
+	pos_x -6112
+	pos_y 6142
+	scale 12.000
+}
+

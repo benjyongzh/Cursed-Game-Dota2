@@ -1,0 +1,9 @@
+"AddonInfo"
+{
+    "maps"          "cursedreborn"
+    "IsPlayable"    "1"
+    "cursedreborn"
+    {
+        "MaxPlayers" "10"
+    }
+}

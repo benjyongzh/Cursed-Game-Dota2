@@ -1,0 +1,215 @@
+"DOTAAbilities"
+{
+	"Version"		"1"
+
+	//=================================================================================================================
+	// Max Health
+	//=================================================================================================================
+	"generic_upgrade_1_lua"
+	{
+       "BaseClass"                    "ability_lua"
+	   "ScriptFile"					"lua_abilities/upgrades/generic_upgrade_1_lua"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	   	"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        // Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_per_stack"				"24"
+			}
+		}
+	}
+
+    //=================================================================================================================
+	// HP Regen
+	//=================================================================================================================
+	"generic_upgrade_2_lua"
+	{
+       "BaseClass"                    "ability_lua"
+	   "ScriptFile"					"lua_abilities/upgrades/generic_upgrade_2_lua"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	   	"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        // Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"hp_regen_per_stack"				"0.6"
+			}
+		}
+	}
+
+    //=================================================================================================================
+	// Max Mana
+	//=================================================================================================================
+	"generic_upgrade_3_lua"
+	{
+       "BaseClass"                    "ability_lua"
+	   "ScriptFile"					"lua_abilities/upgrades/generic_upgrade_3_lua"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	   	"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        // Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mp_per_stack"				"18"
+			}
+		}
+	}
+
+    //=================================================================================================================
+	// MP Regen
+	//=================================================================================================================
+	"generic_upgrade_4_lua"
+	{
+       "BaseClass"                    "ability_lua"
+	   "ScriptFile"					"lua_abilities/upgrades/generic_upgrade_4_lua"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	   	"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        // Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mp_regen_per_stack"				"0.6"
+			}
+		}
+	}
+
+    //=================================================================================================================
+	// Attack Damage
+	//=================================================================================================================
+	"generic_upgrade_5_lua"
+	{
+       "BaseClass"                    "ability_lua"
+	   "ScriptFile"					"lua_abilities/upgrades/generic_upgrade_5_lua"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	   	"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        // Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"atk_dmg_per_stack"				"9"
+			}
+		}
+	}
+    //=================================================================================================================
+	// Attack Speed
+	//=================================================================================================================
+	"generic_upgrade_6_lua"
+	{
+       "BaseClass"                    "ability_lua"
+	   "ScriptFile"					"lua_abilities/upgrades/generic_upgrade_6_lua"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	   	"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        // Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"atk_speed_per_stack"				"7"
+			}
+		}
+	}
+
+    //=================================================================================================================
+	// Armour
+	//=================================================================================================================
+	"generic_upgrade_7_lua"
+	{
+       "BaseClass"                    "ability_lua"
+	   "ScriptFile"					"lua_abilities/upgrades/generic_upgrade_7_lua"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	   	"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        // Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"armor_per_stack"				"0.4"
+			}
+		}
+	}
+
+    //=================================================================================================================
+	// Movespeed
+	//=================================================================================================================
+	"generic_upgrade_8_lua"
+	{
+       "BaseClass"                    "ability_lua"
+	   "ScriptFile"					"lua_abilities/upgrades/generic_upgrade_8_lua"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	   	"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        // Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"ms_per_stack"				"16"
+			}
+		}
+	}
+
+
+
+
+}
