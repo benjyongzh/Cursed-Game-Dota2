@@ -1,4 +1,4 @@
-### Cursed game in DotA2
+# Cursed game in DotA2
 This is a DotA2 custom game I created back in 2020. Last updated in September 2020.
 At the time of uploading this to Github, this game likely will no longer be functioning, or at least be plagued with in-game bugs due to Valve's annual DotA 2 game-breaking updates to their API and mechanics.
 Nevertheless, the game stays on the Steam Workshop [here](https://steamcommunity.com/sharedfiles/filedetails/?id=2109195877).
